@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: telas[_initialIndex],
       ),
-      //bottomNavigationBar: BottomNavigationContent(),
+      bottomNavigationBar: BottomNavigationContent(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Colors.black54,
@@ -122,9 +122,9 @@ class _HomePageState extends State<HomePage> {
         type: BottomNavigationBarType.shifting,
         backgroundColor: Colors.white,
         elevation: 10,
-        unselectedItemColor: Colors.black,
-        fixedColor: Colors.black,
-        iconSize: 22,
+        unselectedItemColor: Colors.black54,
+        fixedColor: Colors.black54,
+        iconSize: 18,
         selectedFontSize: 18,
         unselectedFontSize: 18,
         currentIndex: _initialIndex,
@@ -143,8 +143,24 @@ class _HomePageState extends State<HomePage> {
             label: 'Adm',
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage('assets/images/bin.png')),
+            icon: ImageIcon(AssetImage('assets/images/done.png')),
             label: 'Encerrados',
+          ),
+          BottomNavigationBarItem(
+            icon: ImageIcon(AssetImage('assets/images/company.png')),
+            label: 'Empresas',
+          ),
+          BottomNavigationBarItem(
+            icon: ImageIcon(AssetImage('assets/images/tv.png')),
+            label: 'Canais',
+          ),
+          BottomNavigationBarItem(
+            icon: ImageIcon(AssetImage('assets/images/users.png')),
+            label: 'Analistas',
+          ),
+          BottomNavigationBarItem(
+            icon: ImageIcon(AssetImage('assets/images/clock.png')),
+            label: 'Status',
           ),
         ],
       ),
