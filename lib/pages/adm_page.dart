@@ -20,6 +20,9 @@ class _AdmPageState extends State<AdmPage> {
   Widget build(BuildContext context) {
     _getAdministrativos();
     return Container(
+      decoration: BoxDecoration(
+        color: Colors.grey[400],
+      ),
       child: Column(
         children: [
           Expanded(

@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wrdesk_app">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="wrdesk_app"
         android:name="${applicationName}"

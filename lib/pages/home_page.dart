@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wrdesk_app/drawer/header_drawer.dart';
+import 'package:wrdesk_app/forms/chamado_add.dart';
 import 'package:wrdesk_app/pages/adm_page.dart';
 import 'package:wrdesk_app/pages/analistas_page.dart';
 import 'package:wrdesk_app/pages/canais_page.dart';
@@ -40,8 +41,15 @@ class _HomePageState extends State<HomePage> {
             icon: const Icon(Icons.search),
           ),
           IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.account_circle),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ChamadoAdd(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.add_box_outlined),
           ),
         ],
       ),
@@ -61,11 +69,6 @@ class _HomePageState extends State<HomePage> {
         child: telas[_initialIndex],
       ),
       bottomNavigationBar: BottomNavigationContent(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Colors.black54,
-        child: Icon(Icons.add),
-      ),
     );
   }
 

@@ -21,6 +21,9 @@ class _TasksPageState extends State<TasksPage> {
     _getAtivos();
 
     return Container(
+      decoration: BoxDecoration(
+        color: Colors.grey[400],
+      ),
       child: Column(
         children: [
           Expanded(
