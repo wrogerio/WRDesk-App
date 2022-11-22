@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
                 MaterialPageRoute(
                   builder: (context) => const ChamadoAdd(),
                 ),
-              );
+              ).then((value) => setState(() {}));
             },
             icon: const Icon(Icons.add_box_outlined),
           ),

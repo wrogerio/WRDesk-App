@@ -1,1 +1,1 @@
-const urlbase = 'https://wrdesk.vercel.app/api/';
+const urlbase = 'https://wrdesk.vercel.app/api';

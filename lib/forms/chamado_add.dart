@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wrdesk_app/models/chamado.model.dart';
+import 'package:wrdesk_app/services/ativos.service.dart';
 
 class ChamadoAdd extends StatefulWidget {
   const ChamadoAdd({super.key});
@@ -17,10 +18,10 @@ class _ChamadoAddState extends State<ChamadoAdd> {
   final entregaController = TextEditingController(text: '');
   final descricaoController = TextEditingController(text: '');
 
-  int canalId = 0;
-  int statusId = 0;
-  int analistaId = 0;
-  int empresaId = 0;
+  int canalId = 1;
+  int statusId = 1;
+  int analistaId = 1;
+  int empresaId = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -229,31 +230,25 @@ class _ChamadoAddState extends State<ChamadoAdd> {
                       solicitante: solicitanteController.text,
                       dtSolicitacao: dataSoliciacaoController.text,
                       prazo: prazoController.text,
-                      dtEntrega: entregaController.text,
+                      dtEntrega: "",
                       descricao: descricaoController.text,
                       canalId: canalId,
                       statusId: statusId,
                       analistaId: analistaId,
                       empresaId: empresaId,
                     );
-                    // popup message
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          title: const Text('Chamado'),
-                          content: Text(chamado.toJson().toString()),
-                          actions: [
-                            TextButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: Text("OK"),
-                            ),
-                          ],
+
+                    AtivosService().postChamado(chamado).then((value) {
+                      if (value) {
+                        Navigator.of(context).pop();
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Erro ao cadastrar o chamado'),
+                          ),
                         );
-                      },
-                    );
+                      }
+                    });
                   },
                   child: const Text('Salvar'),
                 ),

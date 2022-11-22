@@ -1,0 +1,16 @@
+POST "https://wrdesk.vercel.app/api/ativos" HTTP/1.1
+content-type: application/json
+
+{
+    "tipo":"task",
+    "assunto":"fasdfa",
+    "descricao":"fdsfasdfdas",
+    "solicitante":"fdsafa",
+    "dtsolScitacao":"21/11/2022",
+    "dtEntrega":"",
+    "prazo":"21/11/2022",
+    "canalId":1,
+    "statusId":1,
+    "analistaId":1,
+    "empresaId":1
+}

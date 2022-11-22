@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wrdesk_app/components/chamadoListView.dart';
 import 'package:wrdesk_app/models/chamadoView.model.dart';
-import 'package:wrdesk_app/services/ativos.service.dart';
+import 'package:wrdesk_app/services/encerrados.service.dart';
 
 class EncerradosPage extends StatefulWidget {
   const EncerradosPage({super.key});
@@ -12,7 +12,7 @@ class EncerradosPage extends StatefulWidget {
 
 class _EncerradosPageState extends State<EncerradosPage> {
   Future<List<ChamadoViewModel>> _getEncerrados() async {
-    List<ChamadoViewModel> chamados = await AtivosService().getEncerrados();
+    List<ChamadoViewModel> chamados = await EncerradosService().getEncerrados();
     return chamados;
   }
 

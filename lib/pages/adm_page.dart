@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wrdesk_app/components/chamadoListView.dart';
 import 'package:wrdesk_app/models/chamadoView.model.dart';
-import 'package:wrdesk_app/services/ativos.service.dart';
+import 'package:wrdesk_app/services/adm.service.dart';
 
 class AdmPage extends StatefulWidget {
   const AdmPage({super.key});
@@ -12,7 +12,7 @@ class AdmPage extends StatefulWidget {
 
 class _AdmPageState extends State<AdmPage> {
   Future<List<ChamadoViewModel>> _getAdministrativos() async {
-    List<ChamadoViewModel> chamados = await AtivosService().getAdministrativos();
+    List<ChamadoViewModel> chamados = await AdmService().getAdministrativos();
     return chamados;
   }
 
